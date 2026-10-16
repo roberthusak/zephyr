@@ -19,22 +19,8 @@ same method can be used as part of OTA. The binary is first downloaded
 into an unoccupied code partition, usually named ``slot1_partition``, then
 upgraded using the :ref:`mcuboot` process.
 
-Examples of OTA
-***************
-
-Golioth
-=======
-
-`Golioth`_ is an IoT management platform that includes OTA updates. Devices are
-configured to observe your available firmware revisions on the Golioth Cloud.
-When a new version is available, the device downloads and flashes the binary. In
-this implementation, the connection between cloud and device is secured using
-TLS/DTLS, and the signed firmware binary is confirmed by MCUboot before the
-upgrade occurs.
-
-1. A working sample can be found on the `Golioth Firmware SDK repository`_
-2. The `Golioth OTA documentation`_ includes complete information about the
-   versioning process
+Open-source providers and standards
+***********************************
 
 Eclipse hawkBit™
 ================
@@ -46,17 +32,6 @@ upgrading the firmware.
 
 There is a :zephyr:code-sample:`hawkbit-api` sample included in the
 Zephyr :zephyr:code-sample-category:`mgmt` section.
-
-UpdateHub
-=========
-
-`UpdateHub`_ is a platform for remotely updating embedded devices. Updates can
-be manually triggered or monitored via polling. When a new update is detected,
-the binary is downloaded and installed. MCUboot can be used to verify the
-signature before upgrading the firmware.
-
-There is an :zephyr:code-sample:`updatehub-fota` sample included in the Zephyr
-:zephyr:code-sample-category:`mgmt` section.
 
 SMP Server
 ==========
@@ -87,6 +62,34 @@ This allows microcontroller units (MCUs) to perform atomic, fail-safe OTA
 updates with automatic rollback on failure.
 
 See :ref:`external_module_mender_mcu` for integration details and examples.
+
+Commercial providers
+********************
+
+Golioth
+=======
+
+`Golioth`_ is an IoT management platform that includes OTA updates. Devices are
+configured to observe your available firmware revisions on the Golioth Cloud.
+When a new version is available, the device downloads and flashes the binary. In
+this implementation, the connection between cloud and device is secured using
+TLS/DTLS, and the signed firmware binary is confirmed by MCUboot before the
+upgrade occurs.
+
+1. A working sample can be found on the `Golioth Firmware SDK repository`_
+2. The `Golioth OTA documentation`_ includes complete information about the
+   versioning process
+
+UpdateHub
+=========
+
+`UpdateHub`_ is a platform for remotely updating embedded devices. Updates can
+be manually triggered or monitored via polling. When a new update is detected,
+the binary is downloaded and installed. MCUboot can be used to verify the
+signature before upgrading the firmware.
+
+There is an :zephyr:code-sample:`updatehub-fota` sample included in the Zephyr
+:zephyr:code-sample-category:`mgmt` section.
 
 Memfault and nRF Cloud powered by Memfault
 ==========================================
